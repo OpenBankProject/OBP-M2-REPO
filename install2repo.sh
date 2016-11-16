@@ -6,28 +6,32 @@
 # Set this to version of locally installed 
 # package in default ~/.m2/ directory
 version=2016.9-ALPHA11-SNAPSHOT
+repo_id=git-OpenBankProject
 
 
 
 user=$(whoami)
 temp_repo=/tmp/obp-temp-repo-${user}/com/tesobe
 rm -rf /tmp/obp-temp-repo-${user}
+rm -rf ./com/tesobe 
 mkdir -p ${temp_repo}
 rsync -a /home/${user}/.m2/repository/com/tesobe/ ${temp_repo}/ 
 
-mvn deploy:deploy-file \
- -DgroupId=com.tesobe.obp \
- -DartifactId=obp-ri-transport \
- -Dversion=${version} \
- -DrepositoryId=git-OpenBankProject \
- -Dfile=${temp_repo}/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.jar \
- -Durl=file://$(pwd)
+common_opts="-DrepositoryId=${repo_id} \
+             -DgroupId=com.tesobe.obp \
+             -DgeneratePom=false \
+             -DuniqueVersion=false \
+             -DupdateReleaseInfo=true \
+             -Dversion=${version} \
+             -Durl=file://$(pwd)"
 
-mvn deploy:deploy-file \
- -DgroupId=com.tesobe.obp \
+mvn deploy:deploy-file ${common_opts} \
+ -DartifactId=obp-ri-transport \
+ -Dfile=${temp_repo}/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.jar \
+ -DpomFile=${temp_repo}/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.pom
+
+mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-kafka \
- -Dversion=${version} \
- -DrepositoryId=git-OpenBankProject \
  -Dfile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.jar \
- -Durl=file://$(pwd)
+ -DpomFile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.pom
 

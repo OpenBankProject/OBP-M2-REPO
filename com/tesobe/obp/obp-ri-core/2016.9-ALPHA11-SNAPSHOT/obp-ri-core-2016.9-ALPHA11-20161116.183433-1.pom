@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) TESOBE Ltd.  2016. All rights reserved.
+  ~
+  ~ Use of this source code is governed by a GNU AFFERO license that can be found in the LICENSE file.
+  ~
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>obp-ri</artifactId>
+    <groupId>com.tesobe.obp</groupId>
+    <version>2016.9-ALPHA11-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>obp-ri-core</artifactId>
+  <name>obp-ri-core</name>
+  <description>
+    TESOBE LTD.'s reference implementation of parts of the Open Bank Project.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.jopt-simple</groupId>
+      <artifactId>jopt-simple</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

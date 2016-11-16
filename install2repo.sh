@@ -25,6 +25,11 @@ common_opts="-DrepositoryId=${repo_id} \
              -Durl=file://$(pwd)"
 
 mvn deploy:deploy-file ${common_opts} \
+ -DartifactId=obp-ri \
+ -Dfile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}-tests.jar \
+ -DpomFile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}.pom
+
+mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-core \
  -Dfile=${temp_repo}/obp/obp-ri-core/${version}/obp-ri-core-${version}.jar \
  -DpomFile=${temp_repo}/obp/obp-ri-core/${version}/obp-ri-core-${version}.pom

@@ -13,7 +13,6 @@ repo_id=git-OpenBankProject
 user=$(whoami)
 temp_repo=/tmp/obp-temp-repo-${user}/com/tesobe
 rm -rf /tmp/obp-temp-repo-${user}
-rm -rf ./com/tesobe 
 mkdir -p ${temp_repo}
 rsync -a /home/${user}/.m2/repository/com/tesobe/ ${temp_repo}/ 
 

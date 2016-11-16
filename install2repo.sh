@@ -19,19 +19,21 @@ rsync -a /home/${user}/.m2/repository/com/tesobe/ ${temp_repo}/
 
 common_opts="-DrepositoryId=${repo_id} \
              -DgroupId=com.tesobe.obp \
-             -DgeneratePom=false \
-             -DuniqueVersion=false \
+             -DgeneratePom=true \
+             -DuniqueVersion=true \
              -DupdateReleaseInfo=true \
              -Dversion=${version} \
              -Durl=file://$(pwd)"
 
 mvn deploy:deploy-file ${common_opts} \
+ -DartifactId=obp-ri-core \
+ -Dfile=${temp_repo}/obp/obp-ri-core/${version}/obp-ri-core-${version}.jar
+
+mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-transport \
- -Dfile=${temp_repo}/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.jar \
- -DpomFile=${temp_repo}/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.pom
+ -Dfile=${temp_repo}/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.jar
 
 mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-kafka \
- -Dfile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.jar \
- -DpomFile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.pom
+ -Dfile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.jar
 

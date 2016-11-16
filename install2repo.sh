@@ -16,8 +16,22 @@ mvn install:install-file \
  -DlocalRepositoryPath=.
 mvn install:install-file \
  -DgroupId=com.tesobe.obp \
+ -DartifactId=obp-ri-transport \
+ -Dversion=${version} \
+ -Dpackaging=pom \
+ -Dfile=/home/${user}/.m2/repository/com/tesobe/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.pom \
+ -DlocalRepositoryPath=.
+mvn install:install-file \
+ -DgroupId=com.tesobe.obp \
  -DartifactId=obp-ri-kafka \
  -Dversion=${version} \
  -Dpackaging=jar \
  -Dfile=/home/${user}/.m2/repository/com/tesobe/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.jar \
+ -DlocalRepositoryPath=.
+mvn install:install-file \
+ -DgroupId=com.tesobe.obp \
+ -DartifactId=obp-ri-kafka \
+ -Dversion=${version} \
+ -Dpackaging=pom \
+ -Dfile=/home/${user}/.m2/repository/com/tesobe/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.pom \
  -DlocalRepositoryPath=.

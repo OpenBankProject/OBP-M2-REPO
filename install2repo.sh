@@ -6,8 +6,8 @@
 # Set this to version of locally installed 
 # package in default ~/.m2/ directory
 version=2016.9-ALPHA11-SNAPSHOT
-repo_id=git-OpenBankProject
 
+repo_id=git-OpenBankProject
 
 
 user=$(whoami)
@@ -18,7 +18,6 @@ rsync -a /home/${user}/.m2/repository/com/tesobe/ ${temp_repo}/
 
 common_opts="-DrepositoryId=${repo_id} \
              -DgroupId=com.tesobe.obp \
-             -DgeneratePom=false \
              -DuniqueVersion=true \
              -DupdateReleaseInfo=true \
              -Dversion=${version} \
@@ -26,21 +25,24 @@ common_opts="-DrepositoryId=${repo_id} \
 
 mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri \
- -Dfile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}-tests.jar \
- -DpomFile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}.pom
+ -DgeneratePom=true \
+ -Dfile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}-tests.jar
 
 mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-core \
+ -DgeneratePom=false \
  -Dfile=${temp_repo}/obp/obp-ri-core/${version}/obp-ri-core-${version}.jar \
  -DpomFile=${temp_repo}/obp/obp-ri-core/${version}/obp-ri-core-${version}.pom
 
 mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-transport \
+ -DgeneratePom=false \
  -Dfile=${temp_repo}/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.jar \
  -DpomFile=${temp_repo}/obp/obp-ri-transport/${version}/obp-ri-transport-${version}.pom
 
 mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-kafka \
+ -DgeneratePom=false \
  -Dfile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.jar \
  -DpomFile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.pom
 

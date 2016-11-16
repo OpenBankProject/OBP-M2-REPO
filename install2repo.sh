@@ -25,8 +25,9 @@ common_opts="-DrepositoryId=${repo_id} \
 
 mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri \
- -DgeneratePom=true \
- -Dfile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}-tests.jar
+ -DgeneratePom=false \
+ -Dfile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}-tests.jar \
+ -DpomFile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}.pom \
 
 mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-core \

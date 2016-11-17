@@ -63,3 +63,4 @@ sha1sum ${orig} | cut -d' ' -f1 > ${orig}.sha1
 echo 
 echo "DONE"
 echo 
+

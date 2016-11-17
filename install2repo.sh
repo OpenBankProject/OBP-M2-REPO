@@ -58,7 +58,7 @@ rm -f ${orig}.zip
 mv META-INF/maven/com.tesobe.obp/obp-ri/pom.xml ${orig}
 rm -rf META-INF
 md5sum ${orig} | cut -d' ' -f1 > ${orig}.md5
-sha1sum ${orig} | cut -d' ' -f1 > ${orig}.md5
+sha1sum ${orig} | cut -d' ' -f1 > ${orig}.sha1
 
 echo 
 echo "DONE"

@@ -13,6 +13,7 @@ repo_id=git-OpenBankProject
 user=$(whoami)
 temp_repo=/tmp/obp-temp-repo-${user}/com/tesobe
 rm -rf /tmp/obp-temp-repo-${user}
+rm -rf com/
 mkdir -p ${temp_repo}
 rsync -a /home/${user}/.m2/repository/com/tesobe/ ${temp_repo}/ 
 
@@ -47,3 +48,18 @@ mvn deploy:deploy-file ${common_opts} \
  -Dfile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.jar \
  -DpomFile=${temp_repo}/obp/obp-ri-kafka/${version}/obp-ri-kafka-${version}.pom
 
+# This is a workaround needed because maven zipps large 
+# pom.xml files and forgets to unzip them when downloaded
+cd com/tesobe/obp/obp-ri/${version}
+export orig=$(ls obp-ri-*.pom)
+mv ${orig} ${orig}.zip 
+unzip ${orig}.zip 1>/dev/null
+rm -f ${orig}.zip 
+mv META-INF/maven/com.tesobe.obp/obp-ri/pom.xml ${orig}
+rm -rf META-INF
+md5sum ${orig} | cut -d' ' -f1 > ${orig}.md5
+sha1sum ${orig} | cut -d' ' -f1 > ${orig}.md5
+
+echo 
+echo "DONE"
+echo 

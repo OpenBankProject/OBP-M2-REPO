@@ -5,7 +5,7 @@
 
 # Set this to version of locally installed 
 # package in default ~/.m2/ directory
-version=2016.9-ALPHA11-SNAPSHOT
+version=2016.11-RC1-SNAPSHOT
 
 repo_id=git-OpenBankProject
 

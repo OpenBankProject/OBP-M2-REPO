@@ -26,6 +26,11 @@ Add dependencies to the POM file of the project:
 
       <dependency>
         <groupId>com.tesobe.obp</groupId>
+        <artifactId>obp-ri-core</artifactId>
+        <version>${obp-ri.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.tesobe.obp</groupId>
         <artifactId>obp-ri-kafka</artifactId>
         <version>${obp-ri.version}</version>
       </dependency>

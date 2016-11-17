@@ -18,7 +18,7 @@ rsync -a /home/${user}/.m2/repository/com/tesobe/ ${temp_repo}/
 
 common_opts="-DrepositoryId=${repo_id} \
              -DgroupId=com.tesobe.obp \
-             -DuniqueVersion=true \
+             -DuniqueVersion=false \
              -DupdateReleaseInfo=true \
              -Dversion=${version} \
              -Durl=file://$(pwd)"
@@ -27,7 +27,7 @@ mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri \
  -DgeneratePom=false \
  -Dfile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}-tests.jar \
- -DpomFile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}.pom \
+ -DpomFile=${temp_repo}/obp/obp-ri/${version}/obp-ri-${version}.pom
 
 mvn deploy:deploy-file ${common_opts} \
  -DartifactId=obp-ri-core \

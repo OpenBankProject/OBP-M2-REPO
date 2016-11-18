@@ -18,7 +18,7 @@ Add the GitHub repository to the POM file of the project:
 
 Add version to properties in POM file of the project:
 
-      <obp-ri.version>2016.9-ALPHA10-SNAPSHOT</obp-ri.version>
+      <obp-ri.version>2016.11-RC1-SNAPSHOT</obp-ri.version>
 
 
 

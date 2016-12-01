@@ -4,8 +4,8 @@
   <artifactId>obp-ri-core</artifactId>
   <versioning>
     <versions>
-      <version>2016.11-RC1-SNAPSHOT</version>
+      <version>2016.11-RC2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20161130150603</lastUpdated>
+    <lastUpdated>20161201085812</lastUpdated>
   </versioning>
 </metadata>

@@ -5,15 +5,17 @@
 
 # Set this to version of locally installed 
 # package in default ~/.m2/ directory
-version=2016.11-RC2-SNAPSHOT
+version=2016.9-ALPHA11-SNAPSHOT
 
 repo_id=git-OpenBankProject
 
+# Uncomment the following line for empty repo install
+# NOTE - use only for freshly initialized repo
+#rm -rf com/
 
 user=$(whoami)
 temp_repo=/tmp/obp-temp-repo-${user}/com/tesobe
 rm -rf /tmp/obp-temp-repo-${user}
-rm -rf com/
 mkdir -p ${temp_repo}
 rsync -a /home/${user}/.m2/repository/com/tesobe/ ${temp_repo}/ 
 

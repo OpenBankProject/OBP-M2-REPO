@@ -3,10 +3,12 @@
   <groupId>com.tesobe.obp</groupId>
   <artifactId>obp-ri-kafka</artifactId>
   <versioning>
+    <release>2016.9-patched</release>
     <versions>
       <version>2016.11-RC2-SNAPSHOT</version>
       <version>2016.9-ALPHA11-SNAPSHOT</version>
+      <version>2016.9-patched</version>
     </versions>
-    <lastUpdated>20161204141010</lastUpdated>
+    <lastUpdated>20161205234251</lastUpdated>
   </versioning>
 </metadata>

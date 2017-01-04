@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.tesobe.obp</groupId>
+  <artifactId>obp-ri-transport</artifactId>
+  <version>2016.11-RC5-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170104.102930</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20170104102930</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>2016.11-RC5-20170104.102930-1</value>
+        <updated>20170104102930</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>2016.11-RC5-20170104.102930-1</value>
+        <updated>20170104102930</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

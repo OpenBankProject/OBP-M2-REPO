@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.tesobe.obp</groupId>
+  <artifactId>obp-ri</artifactId>
+  <version>2016.11-RC6-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170116.095040</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20170116095040</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>2016.11-RC6-20170116.095040-1</value>
+        <updated>20170116095040</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
